@@ -1,11 +1,11 @@
 <?php
 /*
-Plugin Name: KFU brand style
+Plugin Name: KFU brand 
 Plugin URI: https://github.com/orgs/KPFU-web/
-Description: Standart plugin for all sites developed by KPFU web team. 
-Version: 0.8
+Description: KFU brand style for wordpress. 
+Version: 0.9
 Author: Sergey Mochalov
-Author URI: http://kpfu.ru/sergej.mochalov?from=wordpress_plugin
+Author URI: http://kpfu.ru/sergej.mochalov
 Text Domain: kpfu-brand
 Domain Path: /languages
 License: GPL2
@@ -16,12 +16,12 @@ if (!defined('WPINC')) {
 }
 
 // Constants
-define ('PLUGIN_VERSION', '0.8' );
-define ('PLUGDIRPATH', plugin_dir_path(__FILE__));
-define ('PLUGDIRURL', plugin_dir_url( __FILE__ ));
-define ('DEPARTMENT', 'Веб-лаборатория КФУ');
-define ('DEPARTMENTLINK', 'http://kpfu.ru/news');
-define ('SUPPORT', 'для поддержки обратитесь в 328 кабинет');
+define ('KFUBRAND_PLUGIN_VERSION', '0.9' );
+define ('KFUBRAND_PLUGIN_PATH', plugin_dir_path(__FILE__));
+define ('KFUBRAND_PLUGIN_URL', plugin_dir_url( __FILE__ ));
+define ('KFUBRAND_PLUGIN_FOOTER1', 'Сайт разработан в Департаменте PR и рекламы');
+define ('KFUBRAND_PLUGIN_FOOTER1_LINK', 'http://kpfu.ru/news');
+define ('KFUBRAND_PLUGIN_FOOTER2', 'для поддержки обратитесь в 328 кабинет');
 
 
 // Copyrights for KFU

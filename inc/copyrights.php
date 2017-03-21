@@ -1,5 +1,7 @@
 <?php
-
+/*
+* 
+*/
 
 
 // Filters
@@ -17,12 +19,12 @@ add_action( 'wp_before_admin_bar_render', 'clean_admin_bar', 0);
  */
  
 function my_footer_version() {
-    $text = SUPPORT;
+    $text = KFUBRAND_PLUGIN_FOOTER2;
     return $text;
 }
 
 function my_footer_text() {
-    $text = sprintf('Разработка сайта - <a href="%s">%s</a>',DEPARTMENTLINK,DEPARTMENT);
+    $text = sprintf('<a href="%s">%s</a>',KFUBRAND_PLUGIN_FOOTER1_LINK,KFUBRAND_PLUGIN_FOOTER1);
     return $text;
 }
 
@@ -30,7 +32,7 @@ function my_footer_text() {
  Custom login page
  ***********************/
 function my_custom_login() {
-echo '<link rel="stylesheet" type="text/css" href="' . PLUGDIRURL . 'assets/css/login.css"/>';
+echo '<link rel="stylesheet" type="text/css" href="' . KFUBRAND_PLUGIN_URL . 'assets/css/login.css"/>';
 }
 
 // changing the login page URL
