@@ -1,12 +1,12 @@
 <?php
 
 //  Actions
-add_action( 'init', 'remove_emojis_and_clean_head' );
+add_action( 'init', 'kfu_clean_head' );
 
 /**
  * Disable the emoji's and clean head
  */
-function remove_emojis_and_clean_head() {
+function kfu_clean_head() {
     // Emoji
     remove_action( 'wp_head', 'print_emoji_detection_script', 7 );
     remove_action( 'admin_print_scripts', 'print_emoji_detection_script' );
@@ -22,6 +22,16 @@ function remove_emojis_and_clean_head() {
     remove_filter( 'the_content_feed', 'wp_staticize_emoji' );
     remove_filter( 'comment_text_rss', 'wp_staticize_emoji' );
     remove_filter( 'wp_mail', 'wp_staticize_emoji_for_email' );
+
+   // https://wp-mix.com/wordpress-disable-rest-api-header-links/
+   // Disable REST API link tag
+    remove_action('wp_head', 'rest_output_link_wp_head', 10);
+
+    // Disable oEmbed Discovery Links
+    remove_action('wp_head', 'wp_oembed_add_discovery_links', 10);
+
+    // Disable REST API link in HTTP headers
+    remove_action('template_redirect', 'rest_output_link_header', 11, 0);
 
 }
 

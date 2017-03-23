@@ -25,9 +25,9 @@ define ('KFUBRAND_PLUGIN_FOOTER2', 'для поддержки обратитес
 
 
 // Copyrights for KFU
-include_once(PLUGDIRPATH . '/inc/copyrights.php');
+include_once(KFUBRAND_PLUGIN_PATH . '/inc/copyrights.php');
 // Remove fucking emoji and other wp-stuff
-include_once(PLUGDIRPATH. '/inc/clean-head.php');
+include_once(KFUBRAND_PLUGIN_PATH. '/inc/clean-head.php');
 
 
 
