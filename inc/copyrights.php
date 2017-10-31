@@ -1,7 +1,5 @@
 <?php
-/*
-* 
-*/
+ 
 
 
 // Filters
@@ -11,7 +9,7 @@ add_filter( 'login_headerurl', 'custom_loginlogo_url' );
 add_filter( 'login_headertitle', 'custom_loginlogo_title');
 // Actions
 add_action( 'login_head', 'my_custom_login');
-add_action( 'wp_before_admin_bar_render', 'clean_admin_bar', 0);
+
 
 
 /**
@@ -43,13 +41,7 @@ function custom_loginlogo_url(){
 function custom_loginlogo_title(){
     return 'На главную'; // changing the title from "Powered by WordPress" to whatever you wish
     }
-// Clean admin bar
-// Remove wordpress logo in top-left conner
-function clean_admin_bar() {
-        global $wp_admin_bar;
-        /* Remove their stuff */
-        $wp_admin_bar->remove_menu('wp-logo');
-}
+
 
 
 

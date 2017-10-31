@@ -1,8 +1,8 @@
 <?php
 /*
-Plugin Name: KFU brand 
+Plugin Name: KFU brand
 Plugin URI: https://github.com/orgs/KPFU-web/
-Description: KFU brand style for wordpress. 
+Description: KFU brand style for wordpress.
 Version: 0.9
 Author: Sergey Mochalov
 Author URI: http://kpfu.ru/sergej.mochalov
@@ -19,15 +19,17 @@ if (!defined('WPINC')) {
 define ('KFUBRAND_PLUGIN_VERSION', '0.9' );
 define ('KFUBRAND_PLUGIN_PATH', plugin_dir_path(__FILE__));
 define ('KFUBRAND_PLUGIN_URL', plugin_dir_url( __FILE__ ));
-define ('KFUBRAND_PLUGIN_FOOTER1', 'Сайт разработан в Департаменте PR и рекламы');
-define ('KFUBRAND_PLUGIN_FOOTER1_LINK', 'http://kpfu.ru/news');
-define ('KFUBRAND_PLUGIN_FOOTER2', 'для поддержки обратитесь в 328 кабинет');
+define ('KFUBRAND_PLUGIN_FOOTER1', 'Сделано в КФУ');
+define ('KFUBRAND_PLUGIN_FOOTER1_LINK', 'http://kpfu.ru/');
+define ('KFUBRAND_PLUGIN_FOOTER2', 'Поддержка сайта - отдел разработки ЦИТ КФУ каб.328');
 
 
 // Copyrights for KFU
 include_once(KFUBRAND_PLUGIN_PATH . '/inc/copyrights.php');
 // Remove fucking emoji and other wp-stuff
 include_once(KFUBRAND_PLUGIN_PATH. '/inc/clean-head.php');
+// Remove fucking emoji and other wp-stuff
+include_once(KFUBRAND_PLUGIN_PATH. '/inc/admin-cleanup.php');
 
 
 
