@@ -1,47 +1,52 @@
 <?php
- 
-
+namespace KFUbrand\copyrights;
 
 // Filters
-add_filter( 'admin_footer_text', 'my_footer_text' );
-add_filter( 'update_footer', 'my_footer_version', 11 );
-add_filter( 'login_headerurl', 'custom_loginlogo_url' );
-add_filter( 'login_headertitle', 'custom_loginlogo_title');
+add_filter( 'admin_footer_text', __NAMESPACE__ . '\admin_footer_text' );
+add_filter( 'update_footer', __NAMESPACE__ . '\update_footer', 20 );
+add_filter( 'login_headerurl', __NAMESPACE__ . '\login_headerurl' );
+add_filter( 'login_headertitle', __NAMESPACE__ . '\login_headertitle');
 // Actions
-add_action( 'login_head', 'my_custom_login');
-
+add_action( 'login_head', __NAMESPACE__ . '\login_head');
+add_action( 'wp_before_admin_bar_render', __NAMESPACE__ . '\wp_before_admin_bar_render');
 
 
 /**
  * Change text in admin footer
  */
- 
-function my_footer_version() {
-    $text = KFUBRAND_PLUGIN_FOOTER2;
+
+function update_footer() {
+    $text = SUPPORT;
     return $text;
 }
 
-function my_footer_text() {
-    $text = sprintf('<a href="%s">%s</a>',KFUBRAND_PLUGIN_FOOTER1_LINK,KFUBRAND_PLUGIN_FOOTER1);
+function admin_footer_text() {
+    $text = sprintf('Разработка сайта - <a href="%s">%s</a>',DEPARTMENTLINK,DEPARTMENT);
     return $text;
 }
 
 /***********************
  Custom login page
  ***********************/
-function my_custom_login() {
-echo '<link rel="stylesheet" type="text/css" href="' . KFUBRAND_PLUGIN_URL . 'assets/css/login.css"/>';
+function login_head() {
+echo '<link rel="stylesheet" type="text/css" href="' . PLUGDIRURL . 'assets/css/login.css"/>';
 }
 
 // changing the login page URL
-function custom_loginlogo_url(){
+function login_headerurl(){
     return home_url(); // changes the url link from wordpress.org to your blog or website's url
     }
 // changing the login page URL hover text
-function custom_loginlogo_title(){
+function login_headertitle(){
     return 'На главную'; // changing the title from "Powered by WordPress" to whatever you wish
     }
-
+// Clean admin bar
+// Remove wordpress logo in top-left conner
+function wp_before_admin_bar_render() {
+        global $wp_admin_bar;
+        /* Remove their stuff */
+        $wp_admin_bar->remove_menu('wp-logo');
+}
 
 
 
